@@ -1,5 +1,5 @@
 <h1 align="center">Hello Friend! It's Me.</h1>
-<h3 align="center">An autodidact, Android developer, Programming enthusiast and student.</h3>
+<h3 align="center">An autodidact, Android developer, programming enthusiast and student.</h3>
 
 <h3 align="left">Find me on:</h3>
 <p align="left">
