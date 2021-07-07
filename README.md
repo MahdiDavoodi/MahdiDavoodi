@@ -1,4 +1,3 @@
-### Hi there 👋
 <h1 align="center">Hello Friend! It's Me.</h1>
 <h3 align="center">An autodidact, Android developer, Programming enthusiast and student.</h3>
 
