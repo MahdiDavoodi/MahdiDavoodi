@@ -1,5 +1,4 @@
 <h1 align="center">Hello Friend!</h1>
-<h3 align="center">An autodidact, Android developer, programming enthusiast and student.</h3>
 
 <h3 align="left">Find me on:</h3>
 <p align="left">
