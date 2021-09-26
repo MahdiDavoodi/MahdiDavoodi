@@ -1,7 +1,8 @@
-*<h1 align="left">Hello, friend!</h1>*
+*<h1 align="left">:dizzy: Hello, friend!</h1>*
 Here is some information about me:
 
 I'm new to programming, and I'm trying to learn new things every day. I started my journey with Java and I love it! My goal is to be a good mobile/web developer.
+
 Other than programming, I watch tv shows, listen to music, and play video games.
 __________________________________________________________________________________________________________
 
@@ -53,5 +54,5 @@ ________________________________________________________________________________
 <p align="left">
   &nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=mahdidavoodi&show_icons=true&theme=dracula&locale=en" alt="mahdidavoodi" /></p>
 
-<h4 align="left">Spotify</h4>
-[![Spotify](https://novatorem-two-liart.vercel.app/api/spotify)](https://open.spotify.com/user/d6uqxiyug09n3fobqfuhegnwx)
+<h4 align="left">Spotify - Now playing</h4>
+<a href="https://open.spotify.com/user/d6uqxiyug09n3fobqfuhegnwx" target="blank"><img align="center" src="https://novatorem-two-liart.vercel.app/api/spotify" alt="Spotify"/></a>
