@@ -54,3 +54,4 @@ ________________________________________________________________________________
   &nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=mahdidavoodi&show_icons=true&theme=dracula&locale=en" alt="mahdidavoodi" /></p>
 
 <h4 align="left">Spotify</h4>
+[![Spotify](https://novatorem-two-liart.vercel.app/api/spotify)](https://open.spotify.com/user/d6uqxiyug09n3fobqfuhegnwx)
