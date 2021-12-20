@@ -1,10 +1,12 @@
-*<h1 align="left">:dizzy: Hello, friend!</h1>*
+# *:dizzy: Hello, friend!*
+
 Here is some information about me:
 
 I'm new to programming, and I'm trying to learn new things every day. I started my journey with Java and I love it! My goal is to be a good mobile/web developer.
 
 Other than programming, I watch tv shows, listen to music, and play video games.
-__________________________________________________________________________________________________________
+
+---
 
 <h4 align="left">Skills</h4>
 <p align="left">
@@ -33,13 +35,29 @@ ________________________________________________________________________________
 <a href="https://code.visualstudio.com/" target="_blank"> <img src="media/logo6.svg" alt="VSCode" width="40" height="40"/> </a>
 </p>
 
-__________________________________________________________________________________________________________
+---
 
 - Currently working on [Sievere](https://github.com/MahdiDavoodi/Sievere)
 - Ask me about Java and Android
 - Currently learning Kotlin for Android development
 - Pronouns: He/Him
-__________________________________________________________________________________________________________
+
+---
+
+## Notes
+
+I like to take notes while I'm learning something. Instead of paper, I use git for taking notes. You can check them if you want to see what I learned. It can be useful for you too.
+
+<h4 align="left">General</h4>
+
+<a href="https://github.com/MahdiDavoodi/Notes" target="blank"><img align="center" src="media/generalNotes.png" alt="General Notes" height="40" width="40" /></a>
+<a href="https://github.com/MahdiDavoodi/ProblemSolving" target="blank"><img align="center" src="media/problemsolving.png" alt="Problem Solving" height="40" width="40" /></a>
+
+<h4 align="left">Specific</h4>
+
+<a href="https://github.com/MahdiDavoodi/Android" target="blank"><img align="center" src="media/androidDevN.svg" alt="Android Development" height="40" width="40" /></a>
+
+---
 
 <h4 align="left">You can find me on</h4>
 <p align="left">
@@ -56,3 +74,4 @@ ________________________________________________________________________________
 
 <h4 align="left">Spotify - Now playing</h4>
 <a href="https://open.spotify.com/user/d6uqxiyug09n3fobqfuhegnwx" target="blank"><img align="center" src="https://novatorem-two-liart.vercel.app/api/spotify" alt="Spotify"/></a>
+
