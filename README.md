@@ -37,7 +37,7 @@ Other than programming, I watch tv shows, listen to music, and play video games.
 
 ---
 
-- Currently working on [Sievere](https://github.com/MahdiDavoodi/Sievere)
+- Currently working on [Siever](https://github.com/MahdiDavoodi/Siever)
 - Ask me about Java and Android
 - Currently learning Kotlin for Android development
 - Pronouns: He/Him
@@ -55,7 +55,12 @@ I like to take notes while I'm learning something. Instead of paper, I use git f
 
 <h4 align="left">Specific</h4>
 
-<a href="https://github.com/MahdiDavoodi/Android" target="blank"><img align="center" src="media/androidDevN.svg" alt="Android Development" height="40" width="40" /></a>
+<a href="https://github.com/MahdiDavoodi/Android" target="blank"><img align="center" src="media/androidDevN.svg" alt="Android Development" height="35" width="35" /></a>
+<a href="https://github.com/MahdiDavoodi/Kotlin" target="blank"><img align="center" src="media/kotlinN.svg" alt="Kotlin" height="35" width="35" /></a>
+<a href="https://github.com/MahdiDavoodi/HTML-CSS" target="blank"><img align="center" src="media/htmlN.svg" alt="HTML and CSS" height="40" width="40" /></a>
+<a href="https://github.com/MahdiDavoodi/Bash" target="blank"><img align="center" src="media/bashN.svg" alt="Bash" height="40" width="40" /></a>
+<a href="https://github.com/MahdiDavoodi/Linux" target="blank"><img align="center" src="media/linuxN.png" alt="Linux" height="40" width="40" /></a>
+<a href="https://github.com/MahdiDavoodi/Git" target="blank"><img align="center" src="media/gitN.svg" alt="Git" height="40" width="40" /></a>
 
 ---
 
@@ -63,8 +68,8 @@ I like to take notes while I'm learning something. Instead of paper, I use git f
 <p align="left">
 <a href="https://instagram.com/_mahdi_davoodi_" target="blank"><img align="center" src="media/logo3.svg" alt="Instagram" height="40" width="40" /></a>
 <a href="https://www.linkedin.com/in/mahdidavoodi/" target="blank"><img align="center" src="media/logo2.svg" alt="LinkedIn" height="40" width="40" /></a>
-<a href="https://t.me/mahdidavoodi" target="blank"><img align="center" src="media/logo5.svg" alt="Telegram" height="40" width="40" /></a>
 <a href="https://open.spotify.com/user/d6uqxiyug09n3fobqfuhegnwx" target="blank"><img align="center" src="media/logo4.svg" alt="Spotify" height="40" width="40" /></a>
+<a href="https://t.me/mahdidavoodi" target="blank"><img align="center" src="media/logo5.svg" alt="Telegram" height="40" width="40" /></a>
 <a href="https://twitter.com/_mahdi_davoodi_" target="blank"><img align="center" src="media/logo1.svg" alt="Twitter" height="40" width="40" /></a>
 </p>
 
@@ -72,6 +77,8 @@ I like to take notes while I'm learning something. Instead of paper, I use git f
 <p align="left">
   &nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=mahdidavoodi&show_icons=true&theme=dracula&locale=en" alt="mahdidavoodi" /></p>
 
-<h4 align="left">Spotify - Now playing</h4>
-<a href="https://open.spotify.com/user/d6uqxiyug09n3fobqfuhegnwx" target="blank"><img align="center" src="https://novatorem-two-liart.vercel.app/api/spotify" alt="Spotify"/></a>
 
+
+<h4 align="left">Spotify - Now playing</h4>
+
+<a href="https://open.spotify.com/user/d6uqxiyug09n3fobqfuhegnwx" target="blank"><img align="center" src="https://novatorem-two-liart.vercel.app/api/spotify" alt="Spotify"/></a>
