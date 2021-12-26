@@ -66,19 +66,11 @@ I like to take notes while I'm learning something. Instead of paper, I use git f
 
 <h4 align="left">You can find me on</h4>
 <p align="left">
-<a href="https://instagram.com/_mahdi_davoodi_" target="blank"><img align="center" src="media/logo3.svg" alt="Instagram" height="40" width="40" /></a>
 <a href="https://www.linkedin.com/in/mahdidavoodi/" target="blank"><img align="center" src="media/logo2.svg" alt="LinkedIn" height="40" width="40" /></a>
 <a href="https://open.spotify.com/user/d6uqxiyug09n3fobqfuhegnwx" target="blank"><img align="center" src="media/logo4.svg" alt="Spotify" height="40" width="40" /></a>
 <a href="https://t.me/mahdidavoodi" target="blank"><img align="center" src="media/logo5.svg" alt="Telegram" height="40" width="40" /></a>
-<a href="https://twitter.com/_mahdi_davoodi_" target="blank"><img align="center" src="media/logo1.svg" alt="Twitter" height="40" width="40" /></a>
 </p>
 
 <h4 align="left">GitHub</h4>
 <p align="left">
   &nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=mahdidavoodi&show_icons=true&theme=dracula&locale=en" alt="mahdidavoodi" /></p>
-
-
-
-<h4 align="left">Spotify - Now playing</h4>
-
-<a href="https://open.spotify.com/user/d6uqxiyug09n3fobqfuhegnwx" target="blank"><img align="center" src="https://novatorem-two-liart.vercel.app/api/spotify" alt="Spotify"/></a>
