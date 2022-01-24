@@ -37,7 +37,7 @@ Other than programming, I watch tv shows, listen to music, and play video games.
 
 ---
 
-- Currently working on [Siever](https://github.com/MahdiDavoodi/Siever)
+- Currently working on [Sievere](https://github.com/MahdiDavoodi/Sievere)
 - Ask me about Java and Android
 - Currently learning Kotlin for Android development
 - Pronouns: He/Him
@@ -67,7 +67,7 @@ I like to take notes while I'm learning something. Instead of paper, I use git f
 <h4 align="left">You can find me on</h4>
 <p align="left">
 <a href="https://www.linkedin.com/in/mahdidavoodi/" target="blank"><img align="center" src="media/logo2.svg" alt="LinkedIn" height="40" width="40" /></a>
-<a href="https://open.spotify.com/user/d6uqxiyug09n3fobqfuhegnwx" target="blank"><img align="center" src="media/logo4.svg" alt="Spotify" height="40" width="40" /></a>
+<a href="https://open.spotify.com/user/31qdcodtbaj6k5bmbzoxvg2efqei" target="blank"><img align="center" src="media/logo4.svg" alt="Spotify" height="40" width="40" /></a>
 <a href="https://t.me/mahdidavoodi" target="blank"><img align="center" src="media/logo5.svg" alt="Telegram" height="40" width="40" /></a>
 </p>
 
