@@ -1,12 +1,4 @@
-# *:dizzy: Hello, friend!*
-
-Here is some information about me:
-
-I'm new to programming, and I'm trying to learn new things every day. I started my journey with Java and I love it! My goal is to be a good mobile/web developer.
-
-Other than programming, I watch tv shows, listen to music, and play video games.
-
----
+# READ Me
 
 <h4 align="left">Skills</h4>
 <p align="left">
@@ -37,29 +29,14 @@ Other than programming, I watch tv shows, listen to music, and play video games.
 
 ---
 
-- Currently working on [Sievere](https://github.com/MahdiDavoodi/Sievere)
-- Ask me about Java and Android
-- Currently learning Kotlin for Android development
-- Pronouns: He/Him
-
----
-
 ## Notes
-
-I like to take notes while I'm learning something. Instead of paper, I use git for taking notes. You can check them if you want to see what I learned. It can be useful for you too.
-
-<h4 align="left">General</h4>
 
 <a href="https://github.com/MahdiDavoodi/Notes" target="blank"><img align="center" src="media/generalNotes.png" alt="General Notes" height="40" width="40" /></a>
 <a href="https://github.com/MahdiDavoodi/ProblemSolving" target="blank"><img align="center" src="media/problemsolving.png" alt="Problem Solving" height="40" width="40" /></a>
 
-<h4 align="left">Specific</h4>
-
 <a href="https://github.com/MahdiDavoodi/Android" target="blank"><img align="center" src="media/androidDevN.svg" alt="Android Development" height="35" width="35" /></a>
 <a href="https://github.com/MahdiDavoodi/Kotlin" target="blank"><img align="center" src="media/kotlinN.svg" alt="Kotlin" height="35" width="35" /></a>
 <a href="https://github.com/MahdiDavoodi/HTML-CSS" target="blank"><img align="center" src="media/htmlN.svg" alt="HTML and CSS" height="40" width="40" /></a>
-<a href="https://github.com/MahdiDavoodi/Bash" target="blank"><img align="center" src="media/bashN.svg" alt="Bash" height="40" width="40" /></a>
-<a href="https://github.com/MahdiDavoodi/Linux" target="blank"><img align="center" src="media/linuxN.png" alt="Linux" height="40" width="40" /></a>
 <a href="https://github.com/MahdiDavoodi/Git" target="blank"><img align="center" src="media/gitN.svg" alt="Git" height="40" width="40" /></a>
 
 ---
