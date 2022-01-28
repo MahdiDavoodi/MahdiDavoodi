@@ -132,11 +132,7 @@ fun main() {
 <h3>🎶 Vibing to</h3>
 <a href="https://open.spotify.com/user/dl3rgkrwco194cm2lynildhle">
   <img
-    src="https://itstommi.vercel.app/api?theme=dark&scan=true&rainbow=true"
+    src="https://spotify-readme-silk.vercel.app/api?theme=dark&scan=false&rainbow=false"
     alt="Current Spotify Song"
   />
 </a>
-
-<div>
-  <img src="media/Gradients.png" alt="Gradients" width="100%" />
-</div>
