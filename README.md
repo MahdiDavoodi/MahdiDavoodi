@@ -1,4 +1,8 @@
-<img src="media/gif_02.gif" width="50%" align="center" />
+<!--
+<div align="center">
+  <img src="media/gif_02.gif" width="50%" align="center" />
+</div>
+-->
 
 <h3 align="center">
   Hey there!<img
