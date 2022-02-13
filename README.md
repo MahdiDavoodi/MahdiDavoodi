@@ -13,7 +13,7 @@
 
 <div align="center">
   I'm just a junior developer who is <big><b>currently</b></big> learning the
-  basics. I love to read and learn about different ways of creating things using
+  basics. I love to learn about different ways of creating things using
   computers.
 </div>
 
@@ -81,7 +81,7 @@
 <h3>🌎 Bio</h3>
 
 ```kotlin
-class Mahdi(private val lastName: String, var age: Int) {
+class Mahdi(lastName: String, age: Int) : Developer(lastName, age) {
     var skills = listOf<String>()
     var currentlyLearning = ""
     var loves = listOf<String>()
@@ -89,10 +89,11 @@ class Mahdi(private val lastName: String, var age: Int) {
 
 fun main() {
     val me = Mahdi("Davoodi", 18)
-    me.skills = listOf("Java", "Kotlin", "Android", "Git / GitHub")
-    me.currentlyLearning = "HTML"
-    me.loves = listOf("Family and friends", "Programming", "Music")
-
+    with(me) {
+        skills = listOf("Java", "Kotlin", "Android", "Git / GitHub")
+        loves = listOf("Family and friends", "Programming", "Music")
+        currentlyLearning = "Android"
+    }
     println("What about you?")
 }
 ```
