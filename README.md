@@ -88,7 +88,7 @@ class Mahdi(lastName: String, age: Int) : Developer(lastName, age) {
 }
 
 fun main() {
-    val me = Mahdi("Davoodi", 18)
+    val me = Mahdi("Davoodi", 19)
     with(me) {
         skills = listOf("Java", "Kotlin", "Android", "Git / GitHub")
         loves = listOf("Family and friends", "Programming", "Music")
