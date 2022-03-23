@@ -1,18 +1,9 @@
-<!--
 <div align="center">
   <img src="media/gif_02.gif" width="50%" align="center" />
 </div>
--->
-
-<h3 align="center">
-  Hey there!<img
-    src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
-    width="20px"
-  />
-</h3>
 
 <div align="center">
-  I'm just a junior developer who is <big><b>currently</b></big> learning the
+  I'm <big><b>currently</b></big> learning the
   basics. I love to learn about different ways of creating things using
   computers.
 </div>
@@ -35,6 +26,14 @@
     ><img
       align="center"
       src="media/generalNotes.png"
+      alt="General Notes"
+      height="20"
+      width="20"
+  /></a>
+  <a href="https://github.com/MahdiDavoodi/Practice" target="blank"
+    ><img
+      align="center"
+      src="media/practiceN.png"
       alt="General Notes"
       height="20"
       width="20"
@@ -63,11 +62,19 @@
       height="20"
       width="20"
   /></a>
-  <a href="https://github.com/MahdiDavoodi/HTML-CSS" target="blank"
+  <a href="https://github.com/MahdiDavoodi/HTML" target="blank"
     ><img
       align="center"
       src="media/htmlN.svg"
-      alt="HTML and CSS"
+      alt="HTML"
+      height="20"
+      width="20"
+  /></a>
+  <a href="https://github.com/MahdiDavoodi/CSS" target="blank"
+    ><img
+      align="center"
+      src="media/cssN.png"
+      alt="CSS"
       height="20"
       width="20"
   /></a>
@@ -106,7 +113,7 @@ fun main() {
 💽 Shell  ~  bash 5.0.17
 ```
 
-<h3>📈 Interesting numbers</h3>
+<h3>📈 Numbers</h3>
 
 <div>
   <p align="left">
