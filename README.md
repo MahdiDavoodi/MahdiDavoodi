@@ -58,7 +58,7 @@ fun main() {
 </div>
 <hr />
 <div align="center">
-   <h5 >Skills</h5>
+   <h4 >Skills</h4>
    <img
       src="https://img.shields.io/badge/-Java-red?style=for-the-badge&logo=java&logoColor=white&labelColor=black"
       />
@@ -68,6 +68,7 @@ fun main() {
    <img
       src="https://img.shields.io/badge/-Android-green?style=for-the-badge&logo=android&logoColor=white&labelColor=black"
       />
+      <br/><br/>
    <h6>Notes</h6>
    <a href="https://github.com/MahdiDavoodi/Notes" target="blank"
       ><img
@@ -127,5 +128,15 @@ fun main() {
       /></a>
    <a href="https://github.com/MahdiDavoodi/Git" target="blank"
       ><img align="center" src="media/gitN.svg" alt="Git" height="20" width="20"
+      /></a>
+      <br/><br/>
+      <h6>Certifications</h6>
+   <a href="https://github.com/MahdiDavoodi/MahdiDavoodi/tree/main/certificates/README.md" target="blank"
+      ><img
+      align="center"
+      src="media/certN.png"
+      alt="Certifications"
+      height="20"
+      width="20"
       /></a>
 </div>
