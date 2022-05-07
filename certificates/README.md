@@ -12,7 +12,7 @@ These are some certificates that I have acquired through online / offline - cour
 <div align="center">
 <h5>Coursera - Programming Foundations with JavaScript, HTML and CSS</h5>
 
-<img src="https://github.com/MahdiDavoodi/MahdiDavoodi/blob/main/certificates/exams/Coursera-PFWJHC.png?raw=true" alt="Js / HTML / CSS" width="80%">
+<img src="https://github.com/MahdiDavoodi/MahdiDavoodi/blob/main/certificates/courses/Coursera-PFWJHC.png?raw=true" alt="Js / HTML / CSS" width="80%">
 </div>
 
 <div align="center">
