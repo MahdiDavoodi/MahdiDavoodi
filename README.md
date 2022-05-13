@@ -69,7 +69,7 @@ fun main() {
       src="https://img.shields.io/badge/-Android-green?style=for-the-badge&logo=android&logoColor=white&labelColor=black"
       />
       <br/><br/>
-   <h6>Notes</h6>
+   <h6>Learning</h6>
    <a href="https://github.com/MahdiDavoodi/Notes" target="blank"
       ><img
       align="center"
@@ -93,41 +93,6 @@ fun main() {
       alt="Problem Solving"
       height="20"
       width="20"
-      /></a>
-   <a href="https://github.com/MahdiDavoodi/Android" target="blank"
-      ><img
-      align="center"
-      src="media/androidDevN.svg"
-      alt="Android Development"
-      height="20"
-      width="20"
-      /></a>
-   <a href="https://github.com/MahdiDavoodi/Kotlin" target="blank"
-      ><img
-      align="center"
-      src="media/kotlinN.svg"
-      alt="Kotlin"
-      height="20"
-      width="20"
-      /></a>
-   <a href="https://github.com/MahdiDavoodi/HTML" target="blank"
-      ><img
-      align="center"
-      src="media/htmlN.svg"
-      alt="HTML"
-      height="20"
-      width="20"
-      /></a>
-   <a href="https://github.com/MahdiDavoodi/CSS" target="blank"
-      ><img
-      align="center"
-      src="media/cssN.png"
-      alt="CSS"
-      height="20"
-      width="20"
-      /></a>
-   <a href="https://github.com/MahdiDavoodi/Git" target="blank"
-      ><img align="center" src="media/gitN.svg" alt="Git" height="20" width="20"
       /></a>
       <br/><br/>
       <h6>Certifications</h6>
