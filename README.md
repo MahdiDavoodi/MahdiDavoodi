@@ -14,7 +14,7 @@ class Mahdi(lastName: String, age: Int) : Developer(lastName, age) {
 }
 
 fun main() {
-    val me = Mahdi("Davoodi", 19)
+    val me = Mahdi("Davoodi", 20)
     with(me) {
         skills = listOf("Java", "Kotlin", "Android", "Git / GitHub")
         loves = listOf("Family and friends", "Programming", "Music")
@@ -40,14 +40,6 @@ fun main() {
       src="http://github-readme-streak-stats.herokuapp.com?user=mahdidavoodi&theme=light&hide_border=true&background=white&ring=50A6FF&fire=FF9022&currStreakLabel=black"
       />
    <br/>
-   <h3>🎶 Vibing to</h3>
-   <br/>
-   <a href="https://open.spotify.com/user/31qdcodtbaj6k5bmbzoxvg2efqei">
-   <img
-      src="https://spotify-readme-silk.vercel.app/api?theme=white&scan=true&rainbow=false"
-      alt="Current Spotify Song"
-      />
-   </a>
 </div>
 <br/>
 <div align="center">
