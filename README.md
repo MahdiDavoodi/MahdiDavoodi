@@ -20,7 +20,7 @@ fun main() {
         loves = listOf("Family and friends", "Programming", "Music")
         currentlyLearning = "Android"
     }
-    println("What about you?")
+    println("What about you??")
 }
 ```
 
