@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b1812">
+<title>Thank you, bus driver! | Observer: Mahdi</title>
+<style>
+:root{
+  --bg:#0b1812;--card:#12261c;--ink:#eaf5ee;--mute:#93b3a3;--line:rgba(170,235,200,.24);--faint:rgba(170,235,200,.1);
+  --lime:#c4e56a;--on-lime:#10200a;--mint:#5fd3bd;--on-mint:#06201b;--coral:#f29a76;--on-coral:#2a1006;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;overscroll-behavior-y:contain;overflow-anchor:none;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;touch-action:manipulation;-webkit-tap-highlight-color:transparent;cursor:pointer;user-select:none;-webkit-user-select:none}
+button:disabled{opacity:.4;cursor:default}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+.hero{padding:calc(env(safe-area-inset-top,0px) + 14px) max(18px,env(safe-area-inset-right,0px)) 16px max(18px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line);background-color:#0f2218;background-image:repeating-linear-gradient(135deg,rgba(170,235,200,.07) 0 1px,transparent 1px 8px)}
+.hero .in{max-width:28rem;margin:0 auto;display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px 12px;align-items:center}
+.badge{width:40px;height:40px;border-radius:15px;border:1.5px solid var(--ink);display:grid;place-items:center;flex:none;background:var(--bg)}
+.badge .ic{width:26px;height:26px}
+.hero h1{margin:0;font-size:1.28rem;line-height:1.15;font-weight:750}
+.hero p{margin:3px 0 0;font-size:.85rem;color:var(--mute)}
+.hero p.meta{margin-top:6px;font-size:.8rem;color:var(--lime)}
+.hero p.meta b{font-weight:700}
+
+main{max-width:30rem;margin:0 auto;padding:14px max(14px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 28px) max(14px,env(safe-area-inset-left,0px))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;margin:0 0 14px}
+.warn{border:1px solid var(--coral);color:var(--coral);border-radius:14px;padding:10px 14px;margin:0 0 14px;font-size:.9rem}
+.warn[hidden]{display:none}
+
+.top{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin:0 0 18px}
+.top .card{flex:1;margin:0;min-width:0}
+.newbtn{width:100%;min-height:48px;border-radius:18px;border:1.5px solid var(--lime);background:transparent;color:var(--lime);display:flex;flex-direction:row;align-items:center;justify-content:center;gap:8px;font-size:.95rem;font-weight:650}
+details.card>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;min-height:56px;font-weight:600;font-size:.95rem;cursor:pointer}
+details.card>summary::-webkit-details-marker{display:none}
+details.card>summary::after{content:"";width:9px;height:9px;border-right:2px solid var(--mute);border-bottom:2px solid var(--mute);transform:rotate(45deg);margin:-4px 4px 0 0;flex:none}
+details.card[open]>summary::after{transform:rotate(-135deg);margin-top:4px}
+.body{padding:0 16px 16px}
+.lab{display:block;font-size:.78rem;color:var(--mute);margin:14px 0 6px}
+.lab:first-child{margin-top:0}
+input[type=text],input[type=date],input[type=time]{font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:0 14px;min-height:46px;width:100%}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{flex:1 1 auto;min-height:48px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-size:.95rem}
+.seg button[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:var(--on-lime);font-weight:650}
+.seg.routes{margin-top:8px}
+input[type=range]{width:100%;accent-color:var(--lime);min-height:36px;margin:0}
+.cv{font-size:.9rem;color:var(--mute)}
+.done{margin-top:16px;width:100%;min-height:48px;border-radius:16px;border:0;background:var(--lime);color:var(--on-lime);font-weight:700}
+
+.glabel{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:650;font-size:.92rem;margin:0 4px 8px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
+.tap{position:relative;min-height:112px;border-radius:24px;border:1.5px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:10px;transition:transform .08s}
+.tap:active{transform:scale(.96)}
+.tap .ic{width:32px;height:32px;stroke-width:2}
+.tap .what{font-size:1.4rem;font-weight:800;line-height:1.1}
+.tap .code{font:700 .78rem ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;opacity:.8}
+.tap .count{position:absolute;top:8px;left:12px;min-width:28px;text-align:center;padding:1px 8px;border-radius:999px;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.14)}
+.tap.e.no{background:var(--card);border-color:var(--lime);color:var(--lime)}
+.tap.e.yes{background:var(--lime);border-color:var(--lime);color:var(--on-lime)}
+.tap.n.no{background:var(--card);border-color:var(--mint);color:var(--mint)}
+.tap.n.yes{background:var(--mint);border-color:var(--mint);color:var(--on-mint)}
+.tap.yes .count{background:rgba(0,0,0,.14)}
+
+.last{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:center;margin:0 0 12px;padding:12px 0;border-top:1px solid var(--faint);border-bottom:1px solid var(--faint)}
+.lastlab{grid-column:1;grid-row:1}
+.lastcode{grid-column:1;grid-row:2;overflow-wrap:anywhere}
+.last .pill{grid-column:2;grid-row:1 / 3}
+.lastlab{font-size:.85rem;color:var(--mute)}
+.lastcode{flex:1;font:800 1.2rem ui-monospace,Menlo,Consolas,monospace;color:var(--lime)}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:transparent}
+.tags{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 8px}
+.tags button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:72px;padding:0 6px;border-radius:16px;border:1.5px solid var(--line);background:transparent;font-size:.85rem;line-height:1.1}
+.tags button b{font-size:1rem}
+.tags button[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:var(--on-coral)}
+#chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;min-height:34px;align-content:flex-start;margin:6px 0 0}
+.chip{font:700 .82rem ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.note{text-align:center;min-height:2.7em;margin:6px 4px 12px;font-size:.85rem;color:var(--mute)}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 10px}
+.stat{text-align:center;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px}
+.sl{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:650;font-size:.9rem}
+.big{font-size:2.1rem;font-weight:800;line-height:1.1;margin:6px 0 2px}
+.sm{font-size:.82rem;color:var(--mute)}
+.bar{height:6px;border-radius:999px;background:var(--faint);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:999px}
+#eB{background:var(--lime)}#nB{background:var(--mint)}
+.stat.g .big,.stat.g .sl{color:var(--lime)}
+.stat.m .big,.stat.m .sl{color:var(--mint)}
+.stat.g{border-color:var(--lime)}.stat.m{border-color:var(--mint)}
+.prog{margin:0 4px 14px;font-size:.85rem;color:var(--mute);text-align:center;overflow-wrap:anywhere}
+
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
+.act{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border-radius:18px;border:1.5px solid var(--line);background:transparent;font-weight:600}
+.act.p{grid-column:1/-1;background:var(--lime);border-color:var(--lime);color:var(--on-lime);font-weight:700}
+textarea{display:block;width:100%;min-height:150px;font:1rem/1.45 ui-monospace,Menlo,Consolas,monospace;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:10px}
+
+footer{text-align:center;font-size:.82rem;color:var(--mute);margin-top:6px}
+button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+input[type=date],input[type=time]{min-width:0;max-width:100%;font-size:1rem;-webkit-appearance:none;appearance:none}
+.row3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:center}
+.row3 .pill{grid-column:1/-1;min-height:48px}
+.clock{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 14px;padding-top:10px;border-top:1px solid var(--faint);text-align:center}
+#clk{font:800 1.15rem ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;color:var(--lime);white-space:nowrap}
+#clkd{font-size:.72rem;color:var(--mute);white-space:nowrap}
+.skip{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:44px;margin:0 0 8px;border-radius:16px;border:1.5px dashed var(--line);background:transparent;font-size:.9rem;color:var(--mute)}
+.skip b{color:var(--ink);min-width:1.2em}
+#sumtxt{min-width:0;overflow-wrap:anywhere;line-height:1.5}
+@media(max-width:359px){
+  .hero{padding-right:max(14px,env(safe-area-inset-right,0px));padding-left:max(14px,env(safe-area-inset-left,0px))}
+  .hero h1{font-size:1.1rem}
+  .body{padding-right:12px;padding-left:12px}
+  .row3{grid-template-columns:minmax(0,1fr)}
+  .sl{gap:4px;font-size:.82rem}
+  .stat{padding:12px 8px}
+  .lastcode{font-size:1rem}
+}
+.grp{border:1.5px solid;border-radius:26px;padding:10px 10px 0;margin:0 0 14px}
+.grp.e{border-color:var(--lime);background:rgba(196,229,106,.07)}
+.grp.n{border-color:var(--mint);background:rgba(95,211,189,.07)}
+.grp.e .glabel{color:var(--lime)}.grp.n .glabel{color:var(--mint)}
+.grp .glabel{font-size:1rem;margin:2px 4px 10px}.grp .glabel .ic{width:30px;height:30px;stroke-width:2}
+.grp .pair{margin:0 0 10px}
+.act.d{color:var(--coral);border-color:rgba(242,154,118,.5)}
+@media(prefers-reduced-motion:reduce){.tap{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-bus" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M3 11h18M7 18v2.5M17 18v2.5"/><circle cx="7.5" cy="14.5" r=".7"/><circle cx="16.5" cy="14.5" r=".7"/></symbol>
+  <symbol id="i-phones" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="7" rx="2"/><rect x="17" y="14" width="4" height="7" rx="2"/></symbol>
+  <symbol id="i-nophones" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="7" rx="2"/><rect x="17" y="14" width="4" height="7" rx="2"/><path d="M3 3l18 18"/></symbol>
+  <symbol id="i-yes" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-4.5 3.5V17H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M8.5 10.5l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-no" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-4.5 3.5V17H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M9.5 8l5 5M14.5 8l-5 5"/></symbol>
+  <symbol id="i-pull" viewBox="0 0 24 24"><circle cx="7.5" cy="8" r="3.5"/><path d="M7.5 11.5V20"/><path d="M14 9h7M18 6l3 3-3 3"/></symbol>
+  <symbol id="i-echo" viewBox="0 0 24 24"><rect x="3" y="4" width="12" height="9" rx="2"/><rect x="9" y="11" width="12" height="9" rx="2"/></symbol>
+  <symbol id="i-q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.6a2.6 2.6 0 1 1 3.6 2.4c-.8.4-1.1 1-1.1 1.8"/><path d="M12 17.2h.01"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h9a6 6 0 0 1 0 12h-3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></symbol>
+</svg>
+
+<header class="hero">
+  <div class="in">
+    <div class="badge"><svg class="ic"><use href="#i-bus"/></svg></div>
+    <div>
+      <h1>Thank you, bus driver!</h1>
+      <p>An observational study comparing how often bus passengers thank the driver when they are and aren't wearing headphones or earbuds.</p>
+      <p class="meta"><b>Observer:</b> Mahdi &middot; HSB4U, TVO ILC</p>
+    </div>
+    <div class="clock"><div id="clk">--:--:--</div><div id="clkd"></div></div>
+  </div>
+</header>
+
+<main>
+  <div class="warn" id="warn" hidden>Saving is turned off in this browser. Tap Copy data before you close the page.</div>
+
+  <div class="top">
+    <details class="card" id="info">
+      <summary><span id="sumtxt">Ride info</span></summary>
+      <div class="body">
+        <label class="lab" for="route">Route</label>
+        <input type="text" id="route" inputmode="numeric" placeholder="Enter route" autocomplete="off" maxlength="6">
+
+        <span class="lab">Ride start (date and time you boarded)</span>
+        <div class="row3">
+          <input type="date" id="date" aria-label="Ride date">
+          <input type="time" id="time" aria-label="Ride start time">
+          <button type="button" class="pill" id="nowbtn">Now</button>
+        </div>
+
+        <span class="lab">Area</span>
+        <div class="seg" data-f="area">
+          <button type="button" data-v="north">north</button><button type="button" data-v="south">south</button><button type="button" data-v="east">east</button><button type="button" data-v="west">west</button><button type="button" data-v="DT">DT</button>
+        </div>
+
+        <label class="lab" for="crowd">Crowd, eyeballed when you board</label>
+        <input type="range" id="crowd" min="0" max="100" step="5" value="50">
+        <div class="cv" id="cv">about 50% full</div>
+
+        <span class="lab">Bus condition</span>
+        <div class="seg" data-f="bus">
+          <button type="button" data-v="clean">clean</button><button type="button" data-v="ok">ok</button><button type="button" data-v="messy">messy</button>
+        </div>
+        <label class="lab" for="rnote">Ride note (weather, delay, anything unusual)</label>
+        <input type="text" id="rnote" maxlength="140" autocomplete="off" placeholder="optional">
+        <button type="button" class="done" id="done">Done</button>
+      </div>
+    </details>
+    <button type="button" class="newbtn" id="newride" aria-label="Start a new ride"><svg class="ic"><use href="#i-plus"/></svg>New ride</button>
+  </div>
+
+  <section class="grp e">
+    <div class="glabel"><svg class="ic"><use href="#i-phones"/></svg>Earbuds or headphones visible</div>
+    <div class="pair">
+      <button type="button" class="tap e no" data-code="EX"><span class="count" data-count="EX">0</span><svg class="ic"><use href="#i-no"/></svg><span class="what">No thanks</span><span class="code">EX</span></button>
+      <button type="button" class="tap e yes" data-code="ET"><span class="count" data-count="ET">0</span><svg class="ic"><use href="#i-yes"/></svg><span class="what">Thanked</span><span class="code">ET</span></button>
+    </div>
+  </section>
+  <section class="grp n">
+    <div class="glabel"><svg class="ic"><use href="#i-nophones"/></svg>No earbuds or headphones</div>
+    <div class="pair">
+      <button type="button" class="tap n no" data-code="NX"><span class="count" data-count="NX">0</span><svg class="ic"><use href="#i-no"/></svg><span class="what">No thanks</span><span class="code">NX</span></button>
+      <button type="button" class="tap n yes" data-code="NT"><span class="count" data-count="NT">0</span><svg class="ic"><use href="#i-yes"/></svg><span class="what">Thanked</span><span class="code">NT</span></button>
+    </div>
+  </section>
+
+  <div class="last">
+    <span class="lastlab">Last entry</span>
+    <span class="lastcode" id="lastcode">–</span>
+    <button type="button" class="pill" id="undo"><svg class="ic"><use href="#i-undo"/></svg>Undo</button>
+  </div>
+  <div class="tags" id="tags">
+    <button type="button" data-k="r" aria-pressed="false"><svg class="ic"><use href="#i-pull"/></svg><span><b>r</b> removed</span></button>
+    <button type="button" data-k="c" aria-pressed="false"><svg class="ic"><use href="#i-echo"/></svg><span><b>c</b> copycat</span></button>
+    <button type="button" data-k="q" aria-pressed="false"><svg class="ic"><use href="#i-q"/></svg><span><b>?</b> unclear</span></button>
+  </div>
+  <button type="button" class="skip" id="skip">Skip rider, could not judge <b id="skn">0</b></button>
+  <p class="note" id="note" aria-live="polite">Tap a result for each rider. Tags apply to the last entry.</p>
+
+  <div class="stats">
+    <div class="stat g">
+      <div class="sl"><svg class="ic"><use href="#i-phones"/></svg>Earbuds</div>
+      <div class="big" id="eP">–</div>
+      <div class="sm"><span id="eT">0</span> of <span id="eN">0</span> thanked</div>
+      <div class="bar"><i id="eB"></i></div>
+    </div>
+    <div class="stat m">
+      <div class="sl"><svg class="ic"><use href="#i-nophones"/></svg>No earbuds</div>
+      <div class="big" id="nP">–</div>
+      <div class="sm"><span id="nT">0</span> of <span id="nN">0</span> thanked</div>
+      <div class="bar"><i id="nB"></i></div>
+    </div>
+  </div>
+  <p class="prog" id="rideline"></p>
+  <div id="chips" aria-label="Recent entries"></div>
+
+  <div class="acts" style="margin-top:14px">
+    <button type="button" class="act p" id="copy"><svg class="ic"><use href="#i-copy"/></svg><span>Copy data</span></button>
+    <button type="button" class="act" id="save"><svg class="ic"><use href="#i-down"/></svg><span>Save .txt</span></button>
+    <button type="button" class="act" id="savecsv"><svg class="ic"><use href="#i-down"/></svg><span>Save .csv</span></button>
+    <button type="button" class="act d" id="reset" style="grid-column:1/-1"><svg class="ic"><use href="#i-trash"/></svg><span>Clear all</span></button>
+  </div>
+
+  <details class="card" id="exp">
+    <summary>Saved data</summary>
+    <div class="body"><textarea id="out" readonly aria-label="Saved data"></textarea></div>
+  </details>
+
+
+  <footer>Thank you, bus driver! &middot; Observer: Mahdi &middot; HSB4U, TVO ILC</footer>
+</main>
+
+<script>
+(function(){
+  var KEY = 'bus-record-v3';
+  var S = { rides: [] };
+  var canSave = true;
+  function $(id){ return document.getElementById(id); }
+  try { localStorage.setItem('_t', '1'); localStorage.removeItem('_t'); } catch (e) { canSave = false; }
+  try { var raw = localStorage.getItem(KEY); if (raw) S = JSON.parse(raw); } catch (e) { S = { rides: [] }; }
+  if (!S || !Array.isArray(S.rides)) S = { rides: [] };
+  if (!canSave) $('warn').hidden = false;
+
+  var DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function isoDate(d){ return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function hhmm(d){ return pad(d.getHours()) + ':' + pad(d.getMinutes()); }
+  function parseISO(s){ var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function fmtDate(s){ if (!s) return '?'; var d = parseISO(s); return DAYS[d.getDay()] + ' ' + MON[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear(); }
+  function shortDate(s){ if (!s) return '?'; var d = parseISO(s); return MON[d.getMonth()] + ' ' + d.getDate(); }
+  function fmt12(t){ if (!t) return '?'; var p = t.split(':'), h = +p[0]; return (h % 12 || 12) + ':' + p[1] + ' ' + (h >= 12 ? 'pm' : 'am'); }
+  function fmtClock(d){ var h = d.getHours(); return (h % 12 || 12) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds()) + ' ' + (h >= 12 ? 'pm' : 'am'); }
+  function fmtTs(ms, full){
+    if (!ms) return '';
+    var d = new Date(ms), s = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+    return full ? isoDate(d) + ' ' + s : fmtClock(d);
+  }
+  function daypart(t){ var h = +t.split(':')[0]; return h >= 5 && h < 12 ? 'morning' : h < 17 ? 'afternoon' : h < 21 ? 'evening' : 'night'; }
+
+  function cur(){ return S.rides[S.rides.length - 1]; }
+  function save(){ if (canSave) { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { canSave = false; $('warn').hidden = false; } } }
+
+  function fix(r){
+    if (!r.date) {
+      var m = /([A-Za-z]{3})\s+(\d{1,2})\s*$/.exec(r.day || ''), mi = m ? MON.indexOf(m[1]) : -1;
+      r.date = mi >= 0 ? '2026-' + pad(mi + 1) + '-' + pad(+m[2]) : '';
+    }
+    if (r.ap) {
+      var t = /^(\d{1,2}):?(\d{2})$/.exec(String(r.time || '').trim());
+      if (t) { var h = +t[1] % 12; if (r.ap === 'p') h += 12; r.time = pad(h) + ':' + t[2]; } else r.time = '';
+    }
+    delete r.day; delete r.ap;
+    if (typeof r.time !== 'string') r.time = '';
+    if (typeof r.note !== 'string') r.note = '';
+    return r;
+  }
+  S.rides.forEach(fix);
+
+  function newRide(auto){
+    var p = S.rides[S.rides.length - 1] || {}, d = new Date();
+    S.rides.push({ route: '', date: isoDate(d), time: hhmm(d), area: p.area || 'north', crowd: 50, bus: p.bus || 'ok', note: '', auto: !!auto, edited: false, entries: [] });
+  }
+  if (!S.rides.length) newRide(true);
+
+  function stamp(r){ var d = new Date(); r.date = isoDate(d); r.time = hhmm(d); }
+  function refreshStale(){
+    var r = cur();
+    if (r.entries.length || r.edited) return;
+    if (r.auto || r.date !== isoDate(new Date())) { stamp(r); save(); syncFields(); }
+  }
+
+  function code(e){ return e.s ? 'S' : e.q ? e.g + '?' : e.g + e.t + (e.r ? 'r' : '') + (e.c ? 'c' : ''); }
+  function say(t){ $('note').textContent = t; }
+
+  function summary(r){
+    return 'Route ' + (r.route || '?') + ', ' + shortDate(r.date) + ', ' + fmt12(r.time) + ', ' + r.area + ', ' + r.crowd + '% full, ' + r.bus;
+  }
+  function syncFields(){
+    var r = cur(), ae = document.activeElement;
+    if (ae !== $('route')) $('route').value = r.route;
+    if (ae !== $('date')) $('date').value = r.date;
+    if (ae !== $('time')) $('time').value = r.time;
+    if (ae !== $('rnote')) $('rnote').value = r.note;
+    $('crowd').value = r.crowd;
+    $('cv').textContent = 'about ' + r.crowd + '% full';
+    document.querySelectorAll('.seg').forEach(function(g){
+      var f = g.getAttribute('data-f');
+      g.querySelectorAll('button').forEach(function(b){
+        b.setAttribute('aria-pressed', String(String(r[f]) === b.getAttribute('data-v')));
+      });
+    });
+    $('sumtxt').textContent = summary(r);
+  }
+
+  document.querySelectorAll('.seg').forEach(function(g){
+    g.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if (!b) return;
+      cur()[g.getAttribute('data-f')] = b.getAttribute('data-v');
+      save(); syncFields();
+    });
+  });
+  $('route').addEventListener('input', function(){ cur().route = $('route').value.trim(); save(); syncFields(); });
+  function setStamp(){ var r = cur(); r.date = $('date').value; r.time = $('time').value; r.edited = true; save(); syncFields(); updateRideLine(); }
+  $('date').addEventListener('input', setStamp); $('date').addEventListener('change', setStamp);
+  $('time').addEventListener('input', setStamp); $('time').addEventListener('change', setStamp);
+  $('nowbtn').addEventListener('click', function(){ var r = cur(); stamp(r); r.edited = true; save(); syncFields(); updateRideLine(); });
+  $('rnote').addEventListener('input', function(){ cur().note = $('rnote').value.trim(); save(); syncFields(); });
+  $('crowd').addEventListener('input', function(){ cur().crowd = Number($('crowd').value); save(); syncFields(); });
+  $('done').addEventListener('click', function(){ $('info').open = false; });
+
+  document.querySelectorAll('.tap').forEach(function(b){
+    b.addEventListener('click', function(){
+      var c = b.getAttribute('data-code');
+      cur().entries.push({ g: c.charAt(0), t: c.charAt(1), r: false, c: false, q: false, ts: Date.now() });
+      cur().auto = false;
+      try { if (navigator.vibrate) navigator.vibrate(15); } catch (e) {}
+      say('Logged ' + c + ' at ' + fmtTs(Date.now()));
+      save(); render();
+    });
+  });
+
+  $('skip').addEventListener('click', function(){
+    cur().entries.push({ s: true, ts: Date.now() });
+    cur().auto = false;
+    try { if (navigator.vibrate) navigator.vibrate(15); } catch (e) {}
+    say('Logged a skipped rider. Not counted in the rates.');
+    save(); render();
+  });
+
+  document.querySelectorAll('#tags button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var en = cur().entries; if (!en.length) return;
+      var e = en[en.length - 1], k = b.getAttribute('data-k');
+      if (e.s) { say('Skipped entries take no tags.'); return; }
+      if (k === 'q') {
+        e.q = !e.q;
+        if (e.q) { e.r = false; e.c = false; }
+      } else if (e.q) {
+        say('Unclear entries take no other tags. Tap ? again to remove it.'); return;
+      } else if (k === 'r') {
+        if (e.t !== 'T') { say('r only applies to a thank-you.'); return; }
+        e.r = !e.r;
+      } else if (k === 'c') {
+        e.c = !e.c;
+      }
+      say('Last entry is now ' + code(e));
+      save(); render();
+    });
+  });
+
+  $('undo').addEventListener('click', function(){
+    if (cur().entries.length) { say('Removed ' + code(cur().entries.pop())); }
+    else if (S.rides.length > 1) { S.rides.pop(); say('Back to the previous ride'); syncFields(); }
+    save(); render();
+  });
+
+  $('newride').addEventListener('click', function(){
+    var r = cur();
+    if (r.entries.length) { newRide(false); save(); syncFields(); render(); say('New ride started, ' + fmt12(cur().time) + '.'); }
+    else if (r.auto && !r.edited) { stamp(r); r.auto = false; save(); syncFields(); render(); say('Ride start set to ' + fmt12(r.time) + '.'); }
+    $('info').open = true;
+  });
+
+  var armed = false, timer;
+  $('reset').addEventListener('click', function(){
+    var l = $('reset').querySelector('span');
+    if (!armed) {
+      armed = true; l.textContent = 'Tap again to clear';
+      timer = setTimeout(function(){ armed = false; l.textContent = 'Clear all'; }, 3000);
+      return;
+    }
+    clearTimeout(timer); armed = false; l.textContent = 'Clear all';
+    S = { rides: [] }; newRide(true); save(); syncFields(); render(); say('All data cleared.');
+  });
+
+  function tally(list){
+    var t = { tot: { E: 0, N: 0 }, th: { E: 0, N: 0 }, c: { ET: 0, EX: 0, NT: 0, NX: 0 }, rn: 0, cn: 0, qn: 0, sn: 0 };
+    (list || S.rides).forEach(function(r){
+      r.entries.forEach(function(e){
+        if (e.s) { t.sn++; return; }
+        if (e.q) { t.qn++; return; }
+        t.tot[e.g]++; if (e.t === 'T') t.th[e.g]++;
+        t.c[e.g + e.t]++;
+        if (e.r) t.rn++;
+        if (e.c) t.cn++;
+      });
+    });
+    return t;
+  }
+  function pct(a, b){ return b ? Math.round(a / b * 100) : null; }
+  function pctText(a, b){ var p = pct(a, b); return p === null ? '–' : p + '%'; }
+  function line(t){
+    return 'counted ' + (t.tot.E + t.tot.N) +
+      ', earbuds ' + t.th.E + ' of ' + t.tot.E + ' thanked (' + pctText(t.th.E, t.tot.E) + ')' +
+      ', no earbuds ' + t.th.N + ' of ' + t.tot.N + ' thanked (' + pctText(t.th.N, t.tot.N) + ')' +
+      ', unclear ' + t.qn + ', skipped ' + t.sn;
+  }
+
+  function sortedRides(){
+    return S.rides.map(function(r, i){ return { r: r, i: i }; })
+      .filter(function(x){ return x.r.entries.length; })
+      .sort(function(a, b){
+        var ka = (a.r.date || '') + ' ' + (a.r.time || ''), kb = (b.r.date || '') + ' ' + (b.r.time || '');
+        return ka < kb ? -1 : ka > kb ? 1 : a.i - b.i;
+      }).map(function(x){ return x.r; });
+  }
+
+  function exportText(){
+    var rides = sortedRides();
+    if (!rides.length) return 'No data yet.';
+    return rides.map(function(r){
+      var t = tally([r]), ts = r.entries.map(function(e){ return e.ts; }).filter(Boolean), L = [];
+      L.push('Ride: ' + (r.date ? fmtDate(r.date) : 'date not set') + ', route ' + (r.route || '?') + ', started ' + fmt12(r.time) + (r.time ? ' (' + daypart(r.time) + ')' : '') + ', ' + r.area + ', crowd about ' + r.crowd + '%, bus ' + r.bus);
+      if (r.note) L.push('Note: ' + r.note);
+      L.push('Totals: ' + line(t) + ', removed earbud ' + t.rn + ', copycat ' + t.cn);
+      if (ts.length) L.push('First exit ' + fmtTs(ts[0]) + ', last exit ' + fmtTs(ts[ts.length - 1]));
+      L.push(r.entries.map(code).join(' '));
+      return L.join('\n');
+    }).join('\n\n----------------------------------------\n\n');
+  }
+
+  function q(v){ v = String(v == null ? '' : v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+  function exportCSV(){
+    var rows = [['ride','date','ride_start','daypart','route','area','crowd_pct','bus','ride_note','entry_no','entry_time','group','thanked','removed_earbud','copycat','unclear','skipped','code']];
+    sortedRides().forEach(function(r, i){
+      r.entries.forEach(function(e, j){
+        rows.push([i + 1, r.date, r.time, r.time ? daypart(r.time) : '', r.route, r.area, r.crowd, r.bus, r.note,
+          j + 1, fmtTs(e.ts, true), e.s ? '' : e.g, e.s || e.q ? '' : e.t, e.r ? 1 : 0, e.c ? 1 : 0, e.q ? 1 : 0, e.s ? 1 : 0, code(e)]);
+      });
+    });
+    return rows.map(function(r){ return r.map(q).join(','); }).join('\r\n');
+  }
+
+  function updateRideLine(){
+    var r = cur(), t = tally([r]);
+    var txt = 'This ride: ' + (t.tot.E + t.tot.N) + ' counted (' + t.tot.E + ' earbuds), ' + t.sn + ' skipped.';
+    if (r.date && r.time) {
+      var st = new Date(r.date + 'T' + r.time), m = Math.floor((Date.now() - st.getTime()) / 60000);
+      if (!isNaN(m) && m >= 0) txt += ' Started ' + fmt12(r.time) + ', ' + (m < 60 ? m + ' min' : Math.floor(m / 60) + ' h ' + (m % 60) + ' min') + ' ago.';
+    }
+    $('rideline').textContent = txt;
+  }
+  function tick(){
+    var d = new Date();
+    $('clk').textContent = fmtClock(d);
+    $('clkd').textContent = fmtDate(isoDate(d));
+    updateRideLine();
+  }
+
+  function render(){
+    var t = tally(), en = cur().entries, last = en[en.length - 1];
+    Object.keys(t.c).forEach(function(k){ document.querySelector('[data-count="' + k + '"]').textContent = t.c[k]; });
+    $('eT').textContent = t.th.E; $('eN').textContent = t.tot.E; $('eP').textContent = pctText(t.th.E, t.tot.E);
+    $('nT').textContent = t.th.N; $('nN').textContent = t.tot.N; $('nP').textContent = pctText(t.th.N, t.tot.N);
+    $('eB').style.width = (pct(t.th.E, t.tot.E) || 0) + '%';
+    $('nB').style.width = (pct(t.th.N, t.tot.N) || 0) + '%';
+    $('skn').textContent = tally([cur()]).sn;
+
+    $('lastcode').textContent = last ? code(last) + '  ' + fmtTs(last.ts) : '–';
+    document.querySelectorAll('#tags button').forEach(function(b){
+      var k = b.getAttribute('data-k');
+      b.disabled = !last || !!last.s;
+      b.setAttribute('aria-pressed', String(!!(last && last[k])));
+    });
+    $('undo').disabled = !last && S.rides.length < 2;
+
+    var chips = $('chips'); chips.textContent = '';
+    en.slice(-24).reverse().forEach(function(e){
+      var s = document.createElement('span'); s.className = 'chip'; s.textContent = code(e); chips.appendChild(s);
+    });
+    $('out').value = exportText();
+    updateRideLine();
+  }
+
+  function legacyCopy(t){
+    var ta = document.createElement('textarea'), ok = false;
+    ta.value = t; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px';
+    document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, t.length);
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+  function copyText(t){
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(t).then(function(){ return true; }, function(){ return legacyCopy(t); });
+    }
+    return Promise.resolve(legacyCopy(t));
+  }
+  $('copy').addEventListener('click', function(){
+    var l = $('copy').querySelector('span');
+    copyText(exportText()).then(function(ok){
+      l.textContent = ok ? 'Copied' : 'Open Saved data to copy';
+      if (!ok) $('exp').open = true;
+      setTimeout(function(){ l.textContent = 'Copy data'; }, 2000);
+    });
+  });
+  function download(name, text, type){
+    try {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([text], { type: type }));
+      a.download = name;
+      document.body.appendChild(a); a.click();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 800);
+    } catch (e) { $('exp').open = true; say('Download blocked. Copy from Saved data instead.'); }
+  }
+  $('save').addEventListener('click', function(){
+    download('bus-thank-you-record-' + isoDate(new Date()) + '.txt', exportText(), 'text/plain');
+  });
+  $('savecsv').addEventListener('click', function(){
+    download('bus-thank-you-record-' + isoDate(new Date()) + '.csv', '\ufeff' + exportCSV(), 'text/csv;charset=utf-8');
+  });
+
+  function lock(){ try { if ('wakeLock' in navigator) navigator.wakeLock.request('screen').catch(function(){}); } catch (e) {} }
+  document.addEventListener('click', lock, { once: true });
+  document.addEventListener('visibilitychange', function(){
+    if (document.visibilityState === 'visible') { lock(); refreshStale(); tick(); }
+  });
+
+  refreshStale();
+  syncFields();
+  render();
+  tick();
+  setInterval(tick, 1000);
+  if (!cur().route && !cur().entries.length) $('info').open = true;
+})();
+</script>
+</body>
+</html>
